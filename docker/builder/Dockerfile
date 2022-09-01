@@ -32,7 +32,6 @@ COPY files/ /
 
 # needed to run sshd
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -q
-
 # setup root user
 RUN echo 'root:passwd' | chpasswd && \
     chmod 700 /root /root/.ssh && \

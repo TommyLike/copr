@@ -20,6 +20,8 @@ RUN dnf -y install copr-dist-git && \
 
 RUN rm /etc/httpd/conf.d/ssl.conf
 
+COPY files/ /
+
 RUN echo "AliasMatch \"/repo(/.*)/md5(/.*)\" \"/var/lib/dist-git/cache/lookaside\\$1\\$2\"" >> /etc/httpd/conf.d/dist-git/lookaside-copr.conf && \
     echo "Alias /repo/ /var/lib/dist-git/cache/lookaside/" >>  /etc/httpd/conf.d/dist-git/lookaside-copr.conf
 
