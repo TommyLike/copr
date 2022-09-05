@@ -105,6 +105,7 @@ services:
     links:
       - database
     stdin_open: true
+    dns: 8.8.8.8
     tty: true
     ports:
       - "5555:5000"
