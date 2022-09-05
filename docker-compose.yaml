@@ -106,6 +106,7 @@ services:
       - database
     stdin_open: true
     tty: true
+    dns: 8.8.8.8
     ports:
       - "5000:5000"
     volumes:
